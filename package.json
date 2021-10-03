@@ -1,0 +1,27 @@
+{
+    "name": "bs-chartist",
+    "version": "0.0.1",
+    "scripts": {
+        "clean": "bsb -clean-world",
+        "watch": "bsb -make-world -w",
+        "build": "bsb -make-world",
+        "dev": "webpack-dev-server --open",
+        "doc-init": "yarn run bsdoc support-files",
+        "doc": "mkdir -p docs && yarn run bsdoc build -o docs bs-three"
+    },
+    "dependencies": {
+        "babelify": "^10.0.0",
+        "browserify": "^17.0.0",
+        "bs-platform": "^*",
+        "bs-promise-monad": "^0.4.4",
+        "bs-webapi": "^0.19.1",
+        "bsb": "^0.0.1",
+        "bucklescript": "^0.0.2",
+        "chartist": "^0.11.4",
+        "rescript": "^9.1.4",
+        "webpack": "^5.56.0"
+    },
+    "devDependencies": {
+        "webpack-cli": "^4.8.0"
+    }
+}
