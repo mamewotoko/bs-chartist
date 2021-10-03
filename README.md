@@ -3,9 +3,31 @@ bs-chartist
 
 A BuckeScript bindings of [CHARTIST.JS](https://gionkunz.github.io/chartist-js/)
 
-* plot as SVG
-  * you can serach from text in chart (TODO: demo)
-  * you can add link (TODO: demo)
+
+Setup
+-------
+
+```
+npm i
+```
+
+Build
+-------
+
+```
+./build.sh
+```
+
+Demo
+-----
+
+Start webserver, for example with python3 execute following command in terminal.
+
+```
+python3 -m http.server
+```
+
+browse <http://localhost:3000/example/demo.html> [example/demo.html](example/demo.html)
 
 References
 -----------------
