@@ -21,7 +21,7 @@ Build
 Demo
 -----
 
-![demo](./image/bs-chartist-demo.png)
+[![demo](./image/bs-chartist-demo.png)](https://mamewotoko.github.io/bs-chartist/)
 
 Start webserver, for example with python3 execute following command in terminal.
 
