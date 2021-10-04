@@ -21,6 +21,8 @@ Build
 Demo
 -----
 
+![demo](./image/bs-chartist-demo.png)
+
 Start webserver, for example with python3 execute following command in terminal.
 
 ```
