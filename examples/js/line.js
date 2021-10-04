@@ -7,6 +7,32 @@ var Chartist = require("chartist");
 new Chartist.Line(".ct-chart", {
   labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
   series: [[12, 9, 7, 8, 5]]
+}, undefined);
+new Chartist.Bar(".ct-bar-chart", {
+  labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+  series: [[12, 9, 7, 8, 5], [2, 29, 4, 8.4, 34]]
+}, undefined);
+new Chartist.Line(".ct-area-chart", {
+  labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+  series: [[2, 29, 4, 8.4, 34]]
+}, {
+  low: 0.0,
+  showArea: true
+});
+new Chartist.Line(".ct-biarea-chart", {
+  labels: ["1", "2", "3", "4", "5", "6", "7", "8"],
+  series: [[1, 2, 3, 1, -2, 0, 1, 0], [-2, -1, -2, -1, -2.5, -1, -2, -1], [0, 0, 0, 1, 2, 2.5, 2, 1], [2.5, 2, 1, 0.5, 1, 0.5, -1, -2.5]]
+}, {
+  low: -3.0,
+  high: 3.0,
+  showArea: true,
+  showLine: false,
+  showPoint: false,
+  fullWidth: true,
+  axisX: {
+    showLabel: false,
+    showGrid: false
+  }
 });
 /*  Not a pure module */
 
