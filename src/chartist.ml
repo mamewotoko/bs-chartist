@@ -16,7 +16,11 @@ type axis_t = {
   } [@@bs.deriving {abstract = light}]
 
 type opt_t = {
+    (* TODO: float or object *)
     chartPadding: padding_t [@bs.optional];
+    labelOffset: float [@bs.optional];
+    (* TODO: enum e.g. explode *)
+    labelDirection: string [@bs.optional];
 
     low: float [@bs.optional];
     high: float [@bs.optional];
@@ -28,9 +32,20 @@ type opt_t = {
     showPoint: bool [@bs.optional];
     fullWidth: bool [@bs.optional];
 
+    scaleMinSpace: float [@bs.optional];
+    onlyInteger: bool [@bs.optional];
+    referenceValue: float [@bs.optional];
+
     (* bar only? *)
     seriesBarDistance: int [@bs.optional];
     axisX: axis_t [@bs.optional];
+
+    (* pie only? *)
+    donut: bool [@bs.optional];
+    donutWidth: float [@bs.optional];
+    (* degree *)
+    donutAngle: float [@bs.optional];
+    total: float [@bs.optional];
 
     labelInterpolationFnc: string -> string [@bs.optional]
   } [@@bs.deriving {abstract = light}]
