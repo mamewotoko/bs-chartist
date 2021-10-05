@@ -31,7 +31,8 @@ type opt_t = {
     (*line only?*)
     showPoint: bool [@bs.optional];
     fullWidth: bool [@bs.optional];
-
+    lineSmooth: bool [@bs.optional];
+    
     scaleMinSpace: float [@bs.optional];
     onlyInteger: bool [@bs.optional];
     referenceValue: float [@bs.optional];

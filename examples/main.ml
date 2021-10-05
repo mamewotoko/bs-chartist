@@ -10,6 +10,9 @@ let () =
            [| 12.; 9.; 7.; 8.; 5. |]
          |]
          ())
+      ~opt:(opt_t
+              ~lineSmooth: false
+              ())
       () in
   let _ : Chartist.Bar.t =
     Chartist.Bar.make ".ct-bar-chart"
