@@ -1,5 +1,9 @@
 
 (**)
+type point_t = {
+    x: Js.Date.t;
+    y: float
+  }
 
 type data_t = {
     labels: string array [@bs.optional];
@@ -57,6 +61,23 @@ end = Bar
 
         (* timeseries *)
 
+(* Line in chartist but series type is differnt *)
+module rec TimeSeries:
+sig
+  type t
+  type ts_t = {
+      name: string [@bs.optional];
+      data: point_t array [@bs.optional]
+    } [@@bs.deriving {abstract = light}]
+  type data_t = {
+      series: ts_t array [@bs.optional];
+    } [@@bs.deriving {abstract = light}]
+  external make: (* query *) string
+                 -> data_t
+                 -> ?opt:opt_t
+                 -> unit
+                 -> t = "Line" [@@bs.new] [@@bs.module "chartist"]
+end = TimeSeries
 
 module rec Pie:
 sig
