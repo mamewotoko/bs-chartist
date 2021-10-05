@@ -7,7 +7,9 @@ var Chartist = require("chartist");
 new Chartist.Line(".ct-chart", {
   labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
   series: [[12, 9, 7, 8, 5]]
-}, undefined);
+}, {
+  lineSmooth: false
+});
 new Chartist.Bar(".ct-bar-chart", {
   labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
   series: [[12, 9, 7, 8, 5], [2, 29, 4, 8.4, 34]]

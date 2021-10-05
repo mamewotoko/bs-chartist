@@ -18,7 +18,9 @@ new Chartist.Line(".ct-chart", {
           8,
           5
         ]]
-    }, undefined);
+    }, {
+      lineSmooth: false
+    });
 
 new Chartist.Bar(".ct-bar-chart", {
       labels: [
