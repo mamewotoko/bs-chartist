@@ -11,16 +11,24 @@ type data_t = {
   } [@@bs.deriving {abstract = light}]
 
 type padding_t = {
+    top: int [@bs.optional];
     right: int [@bs.optional];
+    bottom: int [@bs.optional];
+    left: int [@bs.optional];
   } [@@bs.deriving {abstract = light}]
 
 type axis_t = {
+    offset: float [@bs.optional];
     showLabel: bool [@bs.optional];
     showGrid: bool [@bs.optional];
   } [@@bs.deriving {abstract = light}]
 
 type opt_t = {
+    (* TODO: float or object *)
     chartPadding: padding_t [@bs.optional];
+    labelOffset: float [@bs.optional];
+    (* TODO: enum e.g. explode *)
+    labelDirection: string [@bs.optional];
 
     low: float [@bs.optional];
     high: float [@bs.optional];
@@ -31,10 +39,25 @@ type opt_t = {
     (*line only?*)
     showPoint: bool [@bs.optional];
     fullWidth: bool [@bs.optional];
-
+    lineSmooth: bool [@bs.optional];
+    
+    scaleMinSpace: float [@bs.optional];
+    onlyInteger: bool [@bs.optional];
+    referenceValue: float [@bs.optional];
+    reverseData: bool [@bs.optional];
+    
     (* bar only? *)
     seriesBarDistance: int [@bs.optional];
     axisX: axis_t [@bs.optional];
+    axisY: axis_t [@bs.optional];
+    horizontalBars: bool [@bs.optional];
+    
+    (* pie only? *)
+    donut: bool [@bs.optional];
+    donutWidth: float [@bs.optional];
+    (* degree *)
+    donutAngle: float [@bs.optional];
+    total: float [@bs.optional];
 
     labelInterpolationFnc: string -> string [@bs.optional]
   } [@@bs.deriving {abstract = light}]

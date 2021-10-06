@@ -9,6 +9,9 @@ let () =
            [| 12.; 9.; 7.; 8.; 5. |]
          |]
          ())
+      ~opt:(opt_t
+              ~lineSmooth: false
+              ())
       () in
   let _ : Chartist.Bar.t =
     Chartist.Bar.make ".ct-bar-chart"
@@ -19,6 +22,28 @@ let () =
            [| 2.; 29.; 4.; 8.4; 34. |]
          |]
          ())
+        () in
+  let _ : Chartist.Bar.t =
+    Chartist.Bar.make ".ct-hbar-chart"
+      (data_t
+         ~labels:[| "Mon"; "Tue"; "Wed"; "Thr"; "Fri" |]
+         ~series:[|
+           [| 12.; 9.; 7.; 8.; 5. |];
+           [| 2.; 29.; 4.; 8.4; 34. |]
+         |]
+         ())
+      ~opt:(opt_t
+              ~chartPadding:(padding_t
+                               ~top:10
+                               ~right:10
+                               ~bottom:10
+                               ~left:10
+                               ())
+              ~fullWidth:false
+              ~seriesBarDistance:10
+              ~horizontalBars:true
+              ~reverseData:true
+              ())
         () in
   let _ : Chartist.Line.t =
     Chartist.Line.make ".ct-area-chart"
@@ -85,5 +110,21 @@ let () =
                         ())
               ())
       () in
+
+  (* let _ : Chartist.Pie.t =
+   *   Chartist.Pie.make ".ct-pie-chart"
+   *     (data_t
+   *        ~labels: [| "Bananas"; "Apples"; "Grapes" |]
+   *        ~series:[|
+   *          [| 20.; 15.; 40. |]
+   *        |]
+   *        ())
+   *     ~opt:(opt_t
+   *             ~labelInterpolationFnc: (fun x -> x)
+   *             ())
+   *     ()
+   *   in *)
+  (* let d = Js.Date.fromString "2021-09-22T21:00:00Z:00:00" in *)
+
   ()
 ;;
