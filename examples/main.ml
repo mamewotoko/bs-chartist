@@ -24,6 +24,28 @@ let () =
          |]
          ())
         () in
+  let _ : Chartist.Bar.t =
+    Chartist.Bar.make ".ct-hbar-chart"
+      (data_t
+         ~labels:[| "Mon"; "Tue"; "Wed"; "Thr"; "Fri" |]
+         ~series:[|
+           [| 12.; 9.; 7.; 8.; 5. |];
+           [| 2.; 29.; 4.; 8.4; 34. |]
+         |]
+         ())
+      ~opt:(opt_t
+              ~chartPadding:(padding_t
+                               ~top:10
+                               ~right:10
+                               ~bottom:10
+                               ~left:10
+                               ())
+              ~fullWidth:false
+              ~seriesBarDistance:10
+              ~horizontalBars:true
+              ~reverseData:true
+              ())
+        () in
   let _ : Chartist.Line.t =
     Chartist.Line.make ".ct-area-chart"
       (data_t
