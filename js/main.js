@@ -96,6 +96,17 @@ new Chartist.Pie(".ct-pie-chart", {
     return x;
   }
 });
+new Chartist.Pie(".ct-donut-chart", {
+  labels: ["Bananas", "Apples", "Grapes"],
+  series: [20, 40, 40]
+}, {
+  donut: true,
+  donutWidth: 20,
+  total: 100,
+  labelInterpolationFnc: function (x) {
+    return x;
+  }
+});
 /*  Not a pure module */
 
 },{"chartist":2}],2:[function(require,module,exports){
