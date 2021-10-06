@@ -32,32 +32,31 @@ type opt_t = {
 
     low: float [@bs.optional];
     high: float [@bs.optional];
+
     (*line only?*)
     showArea: bool [@bs.optional];
-    (*line only?*)
     showLine: bool [@bs.optional];
-    (*line only?*)
     showPoint: bool [@bs.optional];
     fullWidth: bool [@bs.optional];
     lineSmooth: bool [@bs.optional];
-    
+
+    (* pie only? *)
+    donut: bool [@bs.optional];
+    donutWidth: float [@bs.optional]; (*degree*)
+    donutAngle: float [@bs.optional]; (*degree*)
+    total: float [@bs.optional];
+    showLabel: bool [@bs.optional];
+
     scaleMinSpace: float [@bs.optional];
     onlyInteger: bool [@bs.optional];
     referenceValue: float [@bs.optional];
     reverseData: bool [@bs.optional];
-    
+
     (* bar only? *)
     seriesBarDistance: int [@bs.optional];
     axisX: axis_t [@bs.optional];
     axisY: axis_t [@bs.optional];
     horizontalBars: bool [@bs.optional];
-    
-    (* pie only? *)
-    donut: bool [@bs.optional];
-    donutWidth: float [@bs.optional];
-    (* degree *)
-    donutAngle: float [@bs.optional];
-    total: float [@bs.optional];
 
     labelInterpolationFnc: string -> string [@bs.optional]
   } [@@bs.deriving {abstract = light}]
@@ -105,6 +104,11 @@ end = TimeSeries
 module rec Pie:
 sig
   type t
+  type data_t = {
+    labels: string array [@bs.optional];
+    series: float array; (* same length *)
+  } [@@bs.deriving {abstract = light}]
+
   external make: (* query *) string
                  -> data_t
                  -> ?opt:opt_t

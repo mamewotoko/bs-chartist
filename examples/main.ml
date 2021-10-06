@@ -110,21 +110,17 @@ let () =
                         ())
               ())
       () in
-
-  (* let _ : Chartist.Pie.t =
-   *   Chartist.Pie.make ".ct-pie-chart"
-   *     (data_t
-   *        ~labels: [| "Bananas"; "Apples"; "Grapes" |]
-   *        ~series:[|
-   *          [| 20.; 15.; 40. |]
-   *        |]
-   *        ())
-   *     ~opt:(opt_t
-   *             ~labelInterpolationFnc: (fun x -> x)
-   *             ())
-   *     ()
-   *   in *)
-  (* let d = Js.Date.fromString "2021-09-22T21:00:00Z:00:00" in *)
-
+  let _ : Chartist.Pie.t =
+    Chartist.Pie.make ".ct-pie-chart"
+      (Chartist.Pie.data_t
+         ~labels: [| "Bananas"; "Apples"; "Grapes" |]
+         ~series:[| 20.; 40.; 40. |]
+         ())
+      ~opt:(opt_t
+              ~labelInterpolationFnc: (fun x -> x)
+              ~total: 100.
+              ())
+      ()
+    in
   ()
 ;;
