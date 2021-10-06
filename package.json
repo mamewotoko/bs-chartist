@@ -5,22 +5,25 @@
         "clean": "bsb -clean-world",
         "watch": "bsb -make-world -w",
         "build": "bsb -make-world",
-        "dev": "webpack-dev-server --open",
+	"serve": "http-server",
+        "dev": "webpack-dev-server --open examples",
         "doc-init": "yarn run bsdoc support-files",
         "doc": "mkdir -p docs && yarn run bsdoc build -o docs bs-three"
     },
     "dependencies": {
+        "@babel/core": "^7.14.5",
         "babelify": "^10.0.0",
-	"@babel/core": "^7.14.5",
         "browserify": "^17.0.0",
-        "bs-platform": "^*",
+        "bs-platform": "^7.0.1",
         "bs-promise-monad": "^0.4.4",
         "bs-webapi": "^0.19.1",
         "bsb": "^0.0.1",
         "bucklescript": "^0.0.2",
         "chartist": "^0.11.4",
+        "http-server": "^13.0.2",
         "rescript": "^9.1.4",
-        "webpack": "^5.56.0"
+        "webpack": "^5.56.0",
+        "webpack-dev-server": "^4.3.1"
     },
     "devDependencies": {
         "webpack-cli": "^4.8.0"

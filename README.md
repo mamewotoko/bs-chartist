@@ -23,13 +23,11 @@ Demo
 
 [![demo](./image/bs-chartist-demo.png)](https://mamewotoko.github.io/bs-chartist/)
 
-Start webserver, for example with python3 execute following command in terminal.
-
 ```
-python3 -m http.server
+npm run serve
 ```
 
-browse <http://localhost:3000/example/demo.html> [example/demo.html](example/demo.html)
+browse <http://localhost:8080/examples/index.html> [examples/index.html](examples/index.html)
 
 References
 -----------------
