@@ -48,6 +48,43 @@ new Chartist.Bar(".ct-bar-chart", {
       ]
     }, undefined);
 
+new Chartist.Bar(".ct-hbar-chart", {
+      labels: [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thr",
+        "Fri"
+      ],
+      series: [
+        [
+          12,
+          9,
+          7,
+          8,
+          5
+        ],
+        [
+          2,
+          29,
+          4,
+          8.4,
+          34
+        ]
+      ]
+    }, {
+      chartPadding: {
+        top: 10,
+        right: 10,
+        bottom: 10,
+        left: 10
+      },
+      fullWidth: false,
+      reverseData: true,
+      seriesBarDistance: 10,
+      horizontalBars: true
+    });
+
 new Chartist.Line(".ct-area-chart", {
       labels: [
         "Monday",
