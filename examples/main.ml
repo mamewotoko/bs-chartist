@@ -122,5 +122,19 @@ let () =
               ())
       ()
     in
+  let _ : Chartist.Pie.t =
+    Chartist.Pie.make ".ct-donut-chart"
+      (Chartist.Pie.data_t
+         ~labels: [| "Bananas"; "Apples"; "Grapes" |]
+         ~series:[| 20.; 40.; 40. |]
+         ())
+      ~opt:(opt_t
+              ~labelInterpolationFnc: (fun x -> x)
+              ~total: 100.
+              ~donut:true
+              ~donutWidth: 20.
+              ())
+      ()
+    in
   ()
 ;;
