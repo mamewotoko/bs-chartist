@@ -1,4 +1,4 @@
-bs-chartist
+bs-chartist [![GitHub Pages](https://github.com/mamewotoko/bs-chartist/actions/workflows/gh-pages.yml/badge.svg)](https://github.com/mamewotoko/bs-chartist/actions/workflows/gh-pages.yml)
 ======================
 
 A BuckeScript bindings of [CHARTIST.JS](https://gionkunz.github.io/chartist-js/)
@@ -23,11 +23,13 @@ Demo
 
 [![demo](./image/bs-chartist-demo.png)](https://mamewotoko.github.io/bs-chartist/)
 
+Run web server
+
 ```
 npm run serve
 ```
 
-browse <http://localhost:8080/examples/index.html> [examples/index.html](examples/index.html)
+then browse <http://localhost:8080/examples/index.html> [examples/index.html](examples/index.html)
 
 References
 -----------------
