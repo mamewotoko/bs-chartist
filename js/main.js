@@ -51,6 +51,51 @@ new Chartist.Line(".ct-biarea-chart", {
     showGrid: true
   }
 });
+new Chartist.Line(".ct-timeseries-chart", {
+  series: [{
+    data: [{
+      x: new Date("2021-07-16T00:00:00Z00:00"),
+      y: 53
+    }, {
+      x: new Date("2021-07-17T00:00:00Z00:00"),
+      y: 40
+    }, {
+      x: new Date("2021-07-18T00:00:00Z00:00"),
+      y: 45
+    }, {
+      x: new Date("2021-07-19T00:00:00Z00:00"),
+      y: 40
+    }, {
+      x: new Date("2021-07-20T00:00:00Z00:00"),
+      y: 20
+    }, {
+      x: new Date("2021-07-21T00:00:00Z00:00"),
+      y: 32
+    }, {
+      x: new Date("2021-07-22T00:00:00Z00:00"),
+      y: 18
+    }, {
+      x: new Date("2021-07-23T00:00:00Z00:00"),
+      y: 11
+    }]
+  }]
+}, {
+  showPoint: false,
+  fullWidth: true,
+  axisX: {
+    showLabel: true,
+    showGrid: true
+  }
+});
+new Chartist.Pie(".ct-pie-chart", {
+  labels: ["Bananas", "Apples", "Grapes"],
+  series: [20, 40, 40]
+}, {
+  total: 100,
+  labelInterpolationFnc: function (x) {
+    return x;
+  }
+});
 /*  Not a pure module */
 
 },{"chartist":2}],2:[function(require,module,exports){
