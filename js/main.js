@@ -107,6 +107,57 @@ new Chartist.Pie(".ct-donut-chart", {
     return x;
   }
 });
+new Chartist.Line(".ct-scatter-chart", {
+  series: [[{
+    x: 0.13,
+    y: 0.54
+  }, {
+    x: 0.47,
+    y: 0.84
+  }, {
+    x: 0.53,
+    y: 0.58
+  }, {
+    x: 0.63,
+    y: 0.94
+  }, {
+    x: 0.23,
+    y: 0.24
+  }, {
+    x: 0.23,
+    y: 0.14
+  }, {
+    x: 0.23,
+    y: 0.4
+  }, {
+    x: 0.03,
+    y: 0.24
+  }, {
+    x: 0.83,
+    y: 0.24
+  }, {
+    x: 0.03,
+    y: 0.84
+  }, {
+    x: 0.03,
+    y: 0.24
+  }, {
+    x: 0.33,
+    y: 0.54
+  }, {
+    x: 0.73,
+    y: 0.54
+  }]]
+}, {
+  low: 0.0,
+  high: 1.0,
+  showLine: false,
+  showPoint: true,
+  axisX: {
+    showLabel: true,
+    type: Chartist.AutoScaleAxis
+  }
+});
 /*  Not a pure module */
 
 },{"chartist":2}],2:[function(require,module,exports){
