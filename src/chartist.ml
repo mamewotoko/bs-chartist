@@ -1,4 +1,8 @@
 
+type axis_type_t
+(* TODO: enum *)
+external autoScaleAxis: axis_type_t = "AutoScaleAxis" [@@bs.val] [@@bs.scope "Chartist"]
+
 (**)
 type point_t = {
     x: Js.Date.t;
@@ -21,6 +25,8 @@ type axis_t = {
     offset: float [@bs.optional];
     showLabel: bool [@bs.optional];
     showGrid: bool [@bs.optional];
+    onlyInteger: bool [@bs.optional];
+    type_: axis_type_t [@bs.as "type"] [@bs.optional];
   } [@@bs.deriving {abstract = light}]
 
 type opt_t = {
@@ -115,3 +121,24 @@ sig
                  -> unit
                  -> t = "Pie" [@@bs.new] [@@bs.module "chartist"]
 end = Pie
+
+
+(* Scatter is Line in chartist *)
+module rec Scatter:
+sig
+  type t
+  type point_t = {
+      x: float;
+      y: float
+    }
+  type data_t = {
+      series: point_t array array [@bs.optional];
+    } [@@bs.deriving {abstract = light}]
+         
+  external make: (* query *) string
+                 -> data_t
+                 -> ?opt:opt_t
+                 -> unit
+                 -> t = "Line" [@@bs.new] [@@bs.module "chartist"]
+end = Scatter
+       

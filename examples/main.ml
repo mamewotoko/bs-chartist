@@ -82,6 +82,7 @@ let () =
                         ())
               ())
       () in
+
   let _ : Chartist.TimeSeries.t =
     Chartist.TimeSeries.make ".ct-timeseries-chart"
       (Chartist.TimeSeries.data_t
@@ -135,6 +136,40 @@ let () =
               ~donutWidth: 20.
               ())
       ()
-    in
+  in
+  let _ : Chartist.Scatter.t =
+    let open Chartist.Scatter in
+    Chartist.Scatter.make ".ct-scatter-chart"
+      (data_t
+         ~series:[|
+           [|
+           { x = 0.13; y = 0.54 };
+           { x = 0.47; y = 0.84 };
+           { x = 0.53; y = 0.58 };
+           { x = 0.63; y = 0.94 };
+           { x = 0.23; y = 0.24 };
+           { x = 0.23; y = 0.14 };
+           { x = 0.23; y = 0.4 };
+           { x = 0.03; y = 0.24 };
+           { x = 0.83; y = 0.24 };
+           { x = 0.03; y = 0.84 };
+           { x = 0.03; y = 0.24 };
+           { x = 0.33; y = 0.54 };
+           { x = 0.73; y = 0.54 };
+           |]
+          |]
+         ())
+      ~opt:(opt_t
+              ~low:0.0
+              ~high:1.0
+              ~showPoint:true
+              ~showLine:false
+              ~axisX:(axis_t
+                        ~type_:autoScaleAxis
+                        ~showLabel:true
+                        ())
+              ())
+      ()
+  in
   ()
 ;;
