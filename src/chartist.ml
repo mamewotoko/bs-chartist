@@ -1,7 +1,9 @@
 
 type axis_type_t
-(* TODO: enum *)
+
 external autoScaleAxis: axis_type_t = "AutoScaleAxis" [@@bs.val] [@@bs.scope "Chartist"]
+external fixedScaleAxis: axis_type_t = "FixedScaleAxis" [@@bs.val] [@@bs.scope "Chartist"]
+external stepAxis: axis_type_t = "stepAxis" [@@bs.val] [@@bs.scope "Chartist"]
 
 (**)
 type point_t = {
@@ -134,11 +136,10 @@ sig
   type data_t = {
       series: point_t array array [@bs.optional];
     } [@@bs.deriving {abstract = light}]
-         
+
   external make: (* query *) string
                  -> data_t
                  -> ?opt:opt_t
                  -> unit
                  -> t = "Line" [@@bs.new] [@@bs.module "chartist"]
 end = Scatter
-       
