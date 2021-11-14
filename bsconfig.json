@@ -1,6 +1,6 @@
 {
-    "name": "bs-chatlist",
-    "version": "0.0.1",
+    "name": "bs-chartist",
+    "version": "0.0.2",
     "sources": ["src", "examples/"],
     "package-specs": {
 	"module": "commonjs",
